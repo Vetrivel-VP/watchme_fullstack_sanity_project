@@ -12,11 +12,12 @@ const Login = () => {
   const navigate = useNavigate();
 
   const responseGoogle = (response) => {
-    // console.log(response)
+    // console.log(response);
     // saving the user info inthe localstorage for future access
     localStorage.setItem("user", JSON.stringify(response.profileObj));
+    // console.log(response.profileObj);
 
-    const { name, googleId, imageUrl } = response.profileObj;
+    const { imageUrl, name, googleId } = response.profileObj;
 
     // saving the user detail to sanity
     const doc = {
